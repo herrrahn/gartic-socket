@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Sketch</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" />
+        <script src="socket.io/socket.io.js"></script>
+    </head>
+
+    <body>
+        <h1>Socket</h1>
+        <button onclick="enviar()">Menssagem</button>
+        <script>
+            const socket = io.connect()
+
+            socket.on('resposta', () => {
+                console.log('resposta')
+            })    
+
+            function enviar() {
+                socket.emit('mensagem')
+            }
+        </script>
+    </body>
+</html>
